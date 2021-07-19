@@ -11,6 +11,7 @@ const saveData = async (req, res) => {
         artist_display
     } = req.body
 
+
     artDataBaseModel.find({ title: title }, (error, data) => {
         if (data.length > 0) {
             res.send('data already exists')

@@ -10,6 +10,7 @@ const saveData = async (req, res) => {
         thumbnail,
         artist_display
     } = req.body
+    // const slug = title.toLowerCase.split(' ').join('-');
 
     artDataBaseModel.find({ title: title }, (error, data) => {
         if (data.length > 0) {

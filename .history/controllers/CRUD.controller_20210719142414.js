@@ -5,11 +5,14 @@ const artDataBaseModel = require('../models/dataBase.model')
 
 //  save to  DB
 const saveData = async (req, res) => {
+
+
     const {
         title,
         thumbnail,
         artist_display
     } = req.body
+    // const slug = title.toLowerCase.split(' ').join('-');
 
     artDataBaseModel.find({ title: title }, (error, data) => {
         if (data.length > 0) {
@@ -59,20 +62,19 @@ const deleteDataByTitle = async (req, res) => {
 
     const title = req.params.title
 
-    artDataBaseModel.deleteOne({ title: title }, (error, data) => {
+    artDataBaseModel.remov({ title: title }, (error, data) => {
         console.log(data[0]);
         if (error) {
             res.send(error)
         } else {
-           res.send(data)
+            res.send(data)
         }
     })
-  
 }
 module.exports = {
     saveData,
     getFavData,
-
+    deleteData,
     updateData,
     deleteDataByTitle
 }

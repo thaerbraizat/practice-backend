@@ -30,7 +30,7 @@ app.get('/',(req,res) => {
 })
 
 app.get('/art',getDataApi)
-// save to DB
+
 app.post('/fav',saveData);
 
 app.get('/fav',getFavData)

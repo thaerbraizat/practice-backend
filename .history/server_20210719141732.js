@@ -12,6 +12,7 @@ const mongoose  = require('mongoose');
 const {
     saveData,
     getFavData,
+    deleteData,
     updateData,
     deleteDataByTitle
 
@@ -30,7 +31,7 @@ app.get('/',(req,res) => {
 })
 
 app.get('/art',getDataApi)
-// save to DB
+
 app.post('/fav',saveData);
 
 app.get('/fav',getFavData)
