@@ -40,10 +40,7 @@ const getFavData = async (req, res) => {
 // update
 
 const updateData = async (req, res) => {
-    const { 
-        artist_display, 
-        thumbnail
-    } = req.body
+    const { artist_display } = req.body
     const title = req.params.title
 
     artDataBaseModel.find({ title: title }, (error, data) => {
@@ -52,20 +49,19 @@ const updateData = async (req, res) => {
         } else {
 
             data[0].artist_display = artist_display;
-            data[0].thumbnail=thumbnail;
             data[0].save();
             res.send(data)
         }
     })
 }
-
-//  ///////delete 
+// delete 
 
 const deleteDataByTitle = async (req, res) => {
 
     const title = req.params.title
 
     artDataBaseModel.deleteOne({ title: title }, (error, data) => {
+        console.log(data[0]);
         if (error) {
             res.send(error)
         } else {
@@ -79,6 +75,7 @@ const deleteDataByTitle = async (req, res) => {
 module.exports = {
     saveData,
     getFavData,
+
     updateData,
     deleteDataByTitle
 }

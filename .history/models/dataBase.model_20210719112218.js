@@ -9,6 +9,13 @@ const artScema =mongoose.Schema({
         trim:true
 
     } ,
+    // slug :{
+    //     type :String,
+    //     unique:true,
+    //     lowercase:true,
+    //     trim:true
+
+    // } ,
    thumbnail:String,
    artist_display:String
 })

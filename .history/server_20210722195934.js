@@ -23,9 +23,7 @@ mongoose.connect('mongodb://localhost:27017/art1',{
     useUnifiedTopology:true,
     useCreateIndex: true,
     useFindAndModify: true,
-}).then().catch((err) => {
-    console.log(err)
-});
+}).then().catch();
 
 app.get('/',(req,res) => {
     res.send("WORKING!!")

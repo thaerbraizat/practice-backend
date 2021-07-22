@@ -40,9 +40,8 @@ const getFavData = async (req, res) => {
 // update
 
 const updateData = async (req, res) => {
-    const { 
-        artist_display, 
-        thumbnail
+    const { artist_display 
+    
     } = req.body
     const title = req.params.title
 
@@ -52,7 +51,6 @@ const updateData = async (req, res) => {
         } else {
 
             data[0].artist_display = artist_display;
-            data[0].thumbnail=thumbnail;
             data[0].save();
             res.send(data)
         }

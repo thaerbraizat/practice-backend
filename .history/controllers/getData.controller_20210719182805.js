@@ -3,18 +3,17 @@ const ArcData = require('../models/getData.model')
 
 const getDataApi = async (req, res) => {
 
-    const url = "https://api.artic.edu/api/v1/artworks";
+    const url = "https://api.artic.edu/api/v1/artworks?limit=5";
     axios.get(url).then(data => {
 
         dataAr = data.data.data;
-        // console.log(dataAr);
+        console.log(dataAr);
         const reqData = dataAr.map(art => {
             return new ArcData(art);
         })
         res.send(reqData)
     }).catch(error => {
         console.log(error)
-        res.send("THA2ER 5ARA");
     })
 
 }

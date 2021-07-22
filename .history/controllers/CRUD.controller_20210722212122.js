@@ -52,7 +52,7 @@ const updateData = async (req, res) => {
         } else {
 
             data[0].artist_display = artist_display;
-            data[0].thumbnail=thumbnail;
+            data
             data[0].save();
             res.send(data)
         }

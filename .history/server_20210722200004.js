@@ -24,7 +24,7 @@ mongoose.connect('mongodb://localhost:27017/art1',{
     useCreateIndex: true,
     useFindAndModify: true,
 }).then().catch((err) => {
-    console.log(err)
+    console.log()
 });
 
 app.get('/',(req,res) => {

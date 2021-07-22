@@ -9,6 +9,7 @@ const artScema =mongoose.Schema({
         trim:true
 
     } ,
+ 
    thumbnail:String,
    artist_display:String
 })
