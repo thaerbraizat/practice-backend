@@ -5,40 +5,29 @@ const artDataBaseModel = require('../models/dataBase.model')
 
 //  save to  DB
 // const saveData = async (req, res) => {
+//     const {
+//         title,
+//         thumbnail,
+//         artist_display
+//     } = req.body
+//     const email = req.params.email
+//     artDataBaseModel.find({ title: title }, (error, data) => {
+//         console.log(data);
+//         if (data.length > 0) {
+//             res.send('data already exists')
+//         } else {
+//             let newArt = new artDataBaseModel({
+//                 title: title,
+//                 thumbnail: thumbnail,
+//                 artist_display: artist_display
 
-//     artDataBaseModel.updateOne({email: req.body.email},  {$push: {Fav: req.body.Fav}}, (err) => {
-//             if (err) {
-//                res.send("errrrrrrr")
-//             }
-//             res.send('user updated')
-//         });
-//     }
-    
-const saveData = async (req, res) => {
-    const {
-        title,
-        thumbnail,
-        artist_display
-    
-    } = req.body
+//             });
+//             newArt.save();
 
-    artDataBaseModel.find({title:title}, (error, data) => {
-        console.log(data);
-        if (data.length > 0) {
-            res.send('data already exists')
-        } else {
-            let newArt = new artDataBaseModel({
-                title: title,
-                thumbnail: thumbnail,
-                artist_display: artist_display
-
-            });
-            newArt.save();
-
-            res.send("item Added")
-        }
-    })
-}
+//             res.send("item Added")
+//         }
+//     })
+// }
 
 //  get Fav
 const getFavData = async (req, res) => {

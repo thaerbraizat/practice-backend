@@ -17,7 +17,7 @@ const {
 }
 =require('./controllers/CRUD.controller')
 
-mongoose.connect('mongodb://localhost:27017/art',{
+mongoose.connect('mongodb://localhost:27017/art1',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex: true,

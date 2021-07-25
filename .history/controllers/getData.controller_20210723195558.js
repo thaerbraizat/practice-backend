@@ -14,7 +14,7 @@ const getDataApi = async (req, res) => {
         res.send(reqData)
     }).catch(error => {
         console.log(error)
-        res.send("ERROR");
+        res.send("");
     })
 
 }

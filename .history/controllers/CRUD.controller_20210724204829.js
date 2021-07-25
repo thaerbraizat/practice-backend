@@ -21,13 +21,15 @@ const saveData = async (req, res) => {
         artist_display
     
     } = req.body
-
-    artDataBaseModel.find({title:title}, (error, data) => {
+const email = req.params.email
+    artDataBaseModel.find({"Fav.title":title,email:email}, (error, data) => {
         console.log(data);
         if (data.length > 0) {
             res.send('data already exists')
         } else {
             let newArt = new artDataBaseModel({
+                email,
+                fav:
                 title: title,
                 thumbnail: thumbnail,
                 artist_display: artist_display

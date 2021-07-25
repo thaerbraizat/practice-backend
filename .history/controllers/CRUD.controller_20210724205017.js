@@ -21,7 +21,7 @@ const saveData = async (req, res) => {
         artist_display
     
     } = req.body
-
+const email = req.params.email
     artDataBaseModel.find({title:title}, (error, data) => {
         console.log(data);
         if (data.length > 0) {

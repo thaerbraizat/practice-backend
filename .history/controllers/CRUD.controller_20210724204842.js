@@ -13,25 +13,27 @@ const artDataBaseModel = require('../models/dataBase.model')
 //             res.send('user updated')
 //         });
 //     }
-    
+
 const saveData = async (req, res) => {
     const {
         title,
         thumbnail,
         artist_display
-    
-    } = req.body
 
-    artDataBaseModel.find({title:title}, (error, data) => {
+    } = req.body
+    const email = req.params.email
+    artDataBaseModel.find({ "Fav.title": title, email: email }, (error, data) => {
         console.log(data);
         if (data.length > 0) {
             res.send('data already exists')
         } else {
             let newArt = new artDataBaseModel({
-                title: title,
-                thumbnail: thumbnail,
-                artist_display: artist_display
-
+                email,
+                Fav: {
+                    title: title,
+                    thumbnail: thumbnail,
+                    artist_display: artist_display
+                }
             });
             newArt.save();
 

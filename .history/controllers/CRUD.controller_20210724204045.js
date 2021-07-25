@@ -14,31 +14,31 @@ const artDataBaseModel = require('../models/dataBase.model')
 //         });
 //     }
     
-const saveData = async (req, res) => {
-    const {
-        title,
-        thumbnail,
-        artist_display
+// const saveData = async (req, res) => {
+//     const {
+//         title,
+//         thumbnail,
+//         artist_display
     
-    } = req.body
+//     } = req.body
+// const email = req.params.email
+//     artDataBaseModel.find({"Fav.title":title,email:email}, (error, data) => {
+//         console.log(data);
+//         if (data.length > 0) {
+//             res.send('data already exists')
+//         } else {
+//             let newArt = new artDataBaseModel({
+//                 title: title,
+//                 thumbnail: thumbnail,
+//                 artist_display: artist_display
 
-    artDataBaseModel.find({title:title}, (error, data) => {
-        console.log(data);
-        if (data.length > 0) {
-            res.send('data already exists')
-        } else {
-            let newArt = new artDataBaseModel({
-                title: title,
-                thumbnail: thumbnail,
-                artist_display: artist_display
+//             });
+//             newArt.save();
 
-            });
-            newArt.save();
-
-            res.send("item Added")
-        }
-    })
-}
+//             res.send("item Added")
+//         }
+//     })
+// }
 
 //  get Fav
 const getFavData = async (req, res) => {

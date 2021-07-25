@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 8080;
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -17,12 +18,12 @@ const {
 }
 =require('./controllers/CRUD.controller')
 
-mongoose.connect('mongodb://localhost:27017/art',{
+mongoose.connect('mongodb://localhost:27017/art1',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex: true,
     useFindAndModify: true,
-})
+}
 
 app.get('/',(req,res) => {
     res.send("WORKING!!")

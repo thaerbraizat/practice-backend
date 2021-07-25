@@ -17,7 +17,7 @@ const {
 }
 =require('./controllers/CRUD.controller')
 
-mongoose.connect('mongodb://localhost:27017/art',{
+mongoose.connect('mongodb://localhost:27017/art1',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex: true,
@@ -30,7 +30,7 @@ app.get('/',(req,res) => {
 
 app.get('/art',getDataApi)
 // save to DB
-app.post('/fav',saveData);
+app.post('/fav/:email',saveData);
 
 app.get('/fav',getFavData)
 

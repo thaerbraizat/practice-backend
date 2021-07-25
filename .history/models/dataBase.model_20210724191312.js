@@ -13,8 +13,11 @@ const artScema =mongoose.Schema({
    artist_display:String
 })
 
-
-const artDataBaseModel =mongoose.model('fav_art',artScema);
+const userSchema = new mongoose.Schema({
+    email: { type: String },
+    books: [booksSchema]
+});
+const artDataBaseModel =mongoose.model('fav_art',userSchema);
 
 
 module.exports=artDataBaseModel;

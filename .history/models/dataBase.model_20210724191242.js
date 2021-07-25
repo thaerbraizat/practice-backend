@@ -12,8 +12,6 @@ const artScema =mongoose.Schema({
    thumbnail:String,
    artist_display:String
 })
-
-
 const artDataBaseModel =mongoose.model('fav_art',artScema);
 
 

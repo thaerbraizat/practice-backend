@@ -4,30 +4,19 @@ const artDataBaseModel = require('../models/dataBase.model')
 
 
 //  save to  DB
-// const saveData = async (req, res) => {
-
-//     artDataBaseModel.updateOne({email: req.body.email},  {$push: {Fav: req.body.Fav}}, (err) => {
-//             if (err) {
-//                res.send("errrrrrrr")
-//             }
-//             res.send('user updated')
-//         });
-//     }
-    
 const saveData = async (req, res) => {
     const {
         title,
         thumbnail,
         artist_display
-    
     } = req.body
-
-    artDataBaseModel.find({title:title}, (error, data) => {
-        console.log(data);
+    const email = req.params.email
+    artDataBaseModel.find({ title: title }, (error, data) => {
+        console.log(artDataBaseModel.Fav);
         if (data.length > 0) {
             res.send('data already exists')
         } else {
-            let newArt = new artDataBaseModel({
+            let newArt = new artDataBaseModel.Fav({
                 title: title,
                 thumbnail: thumbnail,
                 artist_display: artist_display
