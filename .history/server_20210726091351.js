@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://thaaer:thaer1234@cluster0.ckp7y.mongodb.net/myFi
 })
 
 app.get('/',(req,res) => {
-    res.send("WORKING Fav!!")
+    res.send("WORKING!!")
 })
 
 app.get('/art',getDataApi)

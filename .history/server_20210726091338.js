@@ -17,7 +17,7 @@ const {
 }
 =require('./controllers/CRUD.controller')
 
-mongoose.connect('mongodb+srv://thaaer:thaer1234@cluster0.ckp7y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
+mongoose.connect('mongodb+srv://<username>:<password>@cluster0.ckp7y.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex: true,
@@ -25,7 +25,7 @@ mongoose.connect('mongodb+srv://thaaer:thaer1234@cluster0.ckp7y.mongodb.net/myFi
 })
 
 app.get('/',(req,res) => {
-    res.send("WORKING Fav!!")
+    res.send("WORKING!!")
 })
 
 app.get('/art',getDataApi)
